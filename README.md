@@ -46,3 +46,9 @@ For stdio-based clients:
 ```
 
 For stdio clients, launch `tsx` directly instead of `pnpm mcp`; package-manager lifecycle banners can corrupt the MCP JSON-RPC stream.
+
+## Prompts used to build this
+
+1. “i want to make a mcp server that allows the tanstack start dev tool's access to the agent. how should we go around making it”
+2. “i want a sep personal repo for this.”
+3. “you can make the sep repo in the Desktop/tanstack-start-dev-tool-mcp folder and work in there, import it here and start the mcp server test it, dont stop until it works, also support hmr for the mcp server so you can itereate quickly.”
