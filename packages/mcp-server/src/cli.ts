@@ -27,8 +27,18 @@ const bridge = new DevtoolsBridge({
   token: process.env.TANSTACK_AGENT_DEVTOOLS_TOKEN ?? DEFAULT_BRIDGE_TOKEN,
 })
 
-await bridge.start()
-console.error(`TanStack Devtools MCP bridge listening at ws://${bridge.host}:${bridge.port}/browser`)
+try {
+  await bridge.start()
+  console.error(`TanStack Devtools MCP bridge listening at ws://${bridge.host}:${bridge.port}/browser`)
+} catch (error) {
+  if (error instanceof Error && "code" in error && error.code === "EADDRINUSE") {
+    console.error(
+      `TanStack Devtools MCP bridge port ${bridge.port} is already in use; MCP tools will start without owning the browser bridge.`,
+    )
+  } else {
+    throw error
+  }
+}
 
 const mcpServer = createDevtoolsMcpServer(bridge)
 const transport = new StdioServerTransport()

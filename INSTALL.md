@@ -87,6 +87,8 @@ Use the real clone path in place of `~/dev/tanstack-start-dev-tool-mcp`.
 
 For stdio clients, launch `tsx` directly instead of `pnpm mcp`; package-manager lifecycle banners can corrupt the MCP JSON-RPC stream.
 
+Do not keep `pnpm dev:mcp` running when restarting Codex unless you are actively iterating on this server. Codex launches its own MCP process, and only one process can own the default browser bridge port.
+
 5. Restart Codex.
 
 6. Open your TanStack app in the browser, open TanStack Devtools, and select the `Agent` tab once so the bridge connects.

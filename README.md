@@ -47,6 +47,8 @@ For stdio-based clients:
 
 For stdio clients, launch `tsx` directly instead of `pnpm mcp`; package-manager lifecycle banners can corrupt the MCP JSON-RPC stream.
 
+Codex launches its own MCP process. Stop `pnpm dev:mcp` before restarting Codex unless you are intentionally testing the watched development server.
+
 ## Prompts used to build this
 
 1. “i want to make a mcp server that allows the tanstack start dev tool's access to the agent. how should we go around making it”
