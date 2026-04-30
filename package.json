@@ -1,0 +1,21 @@
+{
+  "name": "tanstack-start-dev-tool-mcp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:mcp": "tsx watch packages/mcp-server/src/cli.ts",
+    "mcp": "tsx packages/mcp-server/src/cli.ts",
+    "test:live-browser": "tsx scripts/live-browser-check.ts",
+    "test:smoke": "tsx scripts/smoke-test.ts",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.2",
+    "@types/node": "^22.19.15",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "ws": "^8.18.3"
+  },
+  "packageManager": "pnpm@10.25.0"
+}
